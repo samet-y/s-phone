@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>s-phone</title>
+</head>
+<body>
+    <div id="phone-container" class="hidden">
+        <!-- Wooden telephone box -->
+        <div class="telephone-box">
+            <!-- Decorative top ornament -->
+            <div class="ornament top-ornament">
+                <div class="ornament-line"></div>
+                <div class="ornament-diamond"></div>
+                <div class="ornament-line"></div>
+            </div>
+
+            <!-- Brass title plate -->
+            <div class="title-plate">
+                <div class="plate-screws">
+                    <span class="screw"></span>
+                    <span class="screw"></span>
+                </div>
+                <h1 id="menu-title">Communication Ltd.</h1>
+                <div class="plate-screws">
+                    <span class="screw"></span>
+                    <span class="screw"></span>
+                </div>
+            </div>
+
+            <!-- Directory view -->
+            <div id="directory-view">
+                <div class="directory-label">~ Directory ~</div>
+                <div id="call-targets" class="call-list">
+                    <!-- Dynamically populated -->
+                </div>
+
+                <div class="separator">
+                    <div class="separator-line"></div>
+                    <div class="separator-icon">&#9742;</div>
+                    <div class="separator-line"></div>
+                </div>
+
+                <div id="incoming-btn" class="call-item incoming-item" onclick="answerIncoming()">
+                    <span class="call-icon">&#9742;</span>
+                    <span id="incoming-label">Answer Incoming Call</span>
+                    <span class="call-arrow">&#10148;</span>
+                </div>
+            </div>
+
+            <!-- In-call view -->
+            <div id="call-view" class="hidden">
+                <div class="call-status">
+                    <div class="call-pulse"></div>
+                    <div class="call-info">
+                        <span class="call-state-label">Connected</span>
+                        <span id="call-target-name" class="call-target">Valentine</span>
+                    </div>
+                </div>
+                <div class="hangup-btn" onclick="hangUp()">
+                    <span>&#10005;</span> Hang Up
+                </div>
+            </div>
+
+            <!-- Decorative bottom ornament -->
+            <div class="ornament bottom-ornament">
+                <div class="ornament-line"></div>
+                <div class="ornament-diamond"></div>
+                <div class="ornament-line"></div>
+            </div>
+
+            <!-- ESC hint -->
+            <div class="esc-hint">Press <kbd>ESC</kbd> to close</div>
+        </div>
+    </div>
+
+    <!-- Ringtone audio (loop while calling) -->
+    <audio id="ringtone" loop preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
