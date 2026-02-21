@@ -3,32 +3,35 @@ rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aw
 
 game 'rdr3'
 lua54 'yes'
-version '0.0.2'
+version '1.0.0'
 author 'huzurweriN'
 
+ui_page 'html/index.html'
+
+shared_scripts {
+    'shared/config.lua',
+    'locale.lua',
+    'languages/*.lua',
+}
+
 client_scripts {
-   'client/main.lua',
-   'client/functions.lua',
-   'client/menuSetup.lua',
+    'client/functions.lua',
+    'client/props.lua',
+    'client/main.lua',
+    'client/menuSetup.lua',
 }
 
 server_scripts {
-   '@oxmysql/lib/MySQL.lua',
-   'server/main.lua',
-}
-
-shared_scripts {
-   'shared/config.lua',
-   'locale.lua',
-   'languages/*.lua'
+    'server/main.lua',
 }
 
 files {
-   'images/phone.png',
- }
-
-dependencies { 
-    'vorp_core',
-    'xsound'
+    'html/index.html',
+    'html/style.css',
+    'html/script.js',
+    'images/phone.png',
 }
 
+dependencies {
+    'vorp_core',
+}
